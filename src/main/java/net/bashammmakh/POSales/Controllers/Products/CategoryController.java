@@ -1,6 +1,7 @@
 package net.bashammmakh.POSales.Controllers.Products;
 
 
+import net.bashammmakh.POSales.DTOs.Products.CategoryDto;
 import net.bashammmakh.POSales.Models.Products.Category;
 import net.bashammmakh.POSales.Services.Products.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +20,21 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping(value = "/")
-    public List<Category> GetItems (){
+    public List<CategoryDto> GetItems (){
         return categoryService.getAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Category GetItem (@PathVariable("id")  Long id){
+    public CategoryDto GetItem (@PathVariable("id")  Long id){
         return categoryService.getById(id);
     }
 
-    @PostMapping(value = "cate")
+    @PostMapping(value = "/create")
     public Category insert(@RequestBody Category category){
     return categoryService.SaveItem(category);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/del/{id}")
     public void deleteCate(@PathVariable("id")  Long id ){
         categoryService.Delete(id);
     }
