@@ -45,7 +45,7 @@ public class ProductCost {
 
 
 
-    @ManyToOne(optional=false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ProductId", nullable=false, updatable=false)
     private Product product;
 /*

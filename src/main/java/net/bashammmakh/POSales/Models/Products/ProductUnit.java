@@ -42,11 +42,11 @@ public class ProductUnit {
     private String QrCode;
 
 
-    @ManyToOne(optional=false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ProductId", nullable=false, updatable=false)
     private Product product;
 
-    @ManyToOne(optional=false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="UnitId", nullable=false, updatable=false)
     private UnitName unitName;
 /*
