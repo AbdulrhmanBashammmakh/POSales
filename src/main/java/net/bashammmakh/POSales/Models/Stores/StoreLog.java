@@ -44,4 +44,68 @@ public class StoreLog {
 	- IsDelivered
 	- DeliveredDate
      */
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
+    }
+
+    public boolean isDrift() {
+        return IsDrift;
+    }
+
+    public void setDrift(boolean drift) {
+        IsDrift = drift;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public ProductCost getProductCost() {
+        return productCost;
+    }
+
+    public void setProductCost(ProductCost productCost) {
+        this.productCost = productCost;
+    }
+
+    public long getProductId() {
+        return ProductId;
+    }
+
+    public void setProductId(long productId) {
+        ProductId = productId;
+    }
+
+    public boolean isDelivered() {
+        return IsDelivered;
+    }
+
+    public void setDelivered(boolean delivered) {
+        IsDelivered = delivered;
+    }
+
+    public Date getDeliveredDate() {
+        return DeliveredDate;
+    }
+
+    public void setDeliveredDate(Date deliveredDate) {
+        DeliveredDate = deliveredDate;
+    }
+
+    public Date getPostDate() {
+        return PostDate;
+    }
+
+    public void setPostDate(Date postDate) {
+        PostDate = postDate;
+    }
 }

@@ -6,11 +6,11 @@ import jakarta.persistence.*;
 public class UnitName {
     public UnitName(long ID, String name) {
         this.ID = ID;
-        Name = name;
+        this.Name = name;
     }
 
     public UnitName(String name) {
-        Name = name;
+       this.Name = name;
     }
     public UnitName() {
 

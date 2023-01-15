@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/category")
 public class CategoryController {
 
     /*
@@ -17,12 +18,12 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping(value = "cates")
+    @GetMapping(value = "/")
     public List<Category> GetItems (){
         return categoryService.getAll();
     }
 
-    @GetMapping(value = "cate/{id}")
+    @GetMapping(value = "/{id}")
     public Category GetItem (@PathVariable("id")  Long id){
         return categoryService.getById(id);
     }
@@ -32,11 +33,11 @@ public class CategoryController {
     return categoryService.SaveItem(category);
     }
 
-    @DeleteMapping("cate/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCate(@PathVariable("id")  Long id ){
         categoryService.Delete(id);
     }
-    @PutMapping("/cate")
+    @PutMapping("/update")
     public Category UpdateItem(@RequestBody Category category){
 
         return categoryService.SaveItem(category) ;
