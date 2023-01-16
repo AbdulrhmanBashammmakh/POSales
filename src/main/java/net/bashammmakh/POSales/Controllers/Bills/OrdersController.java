@@ -1,31 +1,35 @@
 package net.bashammmakh.POSales.Controllers.Bills;
 
-import net.bashammmakh.POSales.Models.Bills.Bill;
-import net.bashammmakh.POSales.Services.Bills.BillService;
+import net.bashammmakh.POSales.Models.Bills.Orders;
+import net.bashammmakh.POSales.Services.Bills.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/Bill")
-public class BillController {
+@RequestMapping("/Orders")
+public class OrdersController {
 
     @Autowired
-    private BillService Service;
+    private OrdersService Service;
+
+
     @GetMapping(value = "/")
-    public List<Bill> GetItems (){
+    public List<Orders> GetItems (){
 
         return Service.getAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Bill GetItem (@PathVariable("id")  Long id){
+    public Orders GetItem (@PathVariable("id")  Long id){
+
+
         return Service.getById(id);
     }
 
     @PostMapping(value = "/create")
-    public Bill insert(@RequestBody Bill x){
+    public Orders insert(@RequestBody Orders x){
 
         return Service.SaveItem(x);
     }
@@ -35,8 +39,9 @@ public class BillController {
 
         Service.Delete(id);
     }
+
     @PutMapping("/update")
-    public Bill UpdateItem(@RequestBody Bill x){
+    public Orders UpdateItem(@RequestBody Orders x){
 
         return Service.SaveItem(x) ;
     }
