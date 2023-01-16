@@ -19,6 +19,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+
     @GetMapping(value = "/")
     public List<CategoryDto> GetItems (){
         return categoryService.getAll();
@@ -30,7 +31,7 @@ public class CategoryController {
     }
 
     @PostMapping(value = "/create")
-    public Category insert(@RequestBody Category category){
+    public Category insert(@RequestBody CategoryDto category){
     return categoryService.SaveItem(category);
     }
 
@@ -39,7 +40,7 @@ public class CategoryController {
         categoryService.Delete(id);
     }
     @PutMapping("/update")
-    public Category UpdateItem(@RequestBody Category category){
+    public Category UpdateItem(@RequestBody CategoryDto category){
 
         return categoryService.SaveItem(category) ;
     }

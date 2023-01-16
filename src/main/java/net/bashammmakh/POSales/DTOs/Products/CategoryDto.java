@@ -2,9 +2,12 @@ package net.bashammmakh.POSales.DTOs.Products;
 
 public class CategoryDto {
 
+
     private long ID ;
 
     private String CategoryName;
+
+ //   private String Cat;
 
     public long getID() {
         return ID;

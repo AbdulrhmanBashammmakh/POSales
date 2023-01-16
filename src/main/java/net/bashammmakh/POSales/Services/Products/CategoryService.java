@@ -33,11 +33,12 @@ public class CategoryService {
 
     public CategoryDto getById(Long id){
         Category cate = categoryRepository.findById(id).get();
-        CategoryDto cateDto =modelMapper.map( cate, CategoryDto.class);
+        CategoryDto cateDto =modelMapper.map(cate, CategoryDto.class);
         return cateDto;
     }
 
-    public Category SaveItem(Category category){
+    public Category SaveItem(CategoryDto categoryDto){
+     Category category =modelMapper.map(categoryDto,Category.class);
 
         return categoryRepository.save(category);
 

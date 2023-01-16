@@ -26,7 +26,12 @@ public class Category {
     @Column()
     private String CategoryName;
 
+    /*
 
+    @JsonIgnore
+    private final LocalDateTime editedAt = LocalDateTime.now();
+
+    */
 
 
     public long getID() {
