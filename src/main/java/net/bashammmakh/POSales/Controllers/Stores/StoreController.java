@@ -21,6 +21,7 @@ public class StoreController {
 
     @GetMapping(value = "/{id}")
     public Store GetItem (@PathVariable("id")  Long id){
+
         return Service.getById(id);
     }
 

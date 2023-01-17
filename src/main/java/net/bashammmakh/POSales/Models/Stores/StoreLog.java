@@ -7,12 +7,36 @@ import java.util.Date;
 @Entity
 public class StoreLog {
 
+
+    public StoreLog(long ID, boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, Date deliveredDate) {
+        this.ID = ID;
+        IsDrift = isDrift;
+        this.store = store;
+        this.productCost = productCost;
+        ProductId = productId;
+        IsDelivered = isDelivered;
+        DeliveredDate = deliveredDate;
+
+    }
+    public StoreLog( boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, Date deliveredDate) {
+
+        IsDrift = isDrift;
+        this.store = store;
+        this.productCost = productCost;
+        ProductId = productId;
+        IsDelivered = isDelivered;
+        DeliveredDate = deliveredDate;
+
+    }
+    public StoreLog() {
+
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID ;
 
     @Column()
-    private boolean IsDrift; // true = drift , false = add
+    private boolean IsDrift = false; // true = drift , false = add
 
     @ManyToOne(optional=false)
     @JoinColumn(name="StoreId", nullable=false, updatable=false)
@@ -27,11 +51,11 @@ public class StoreLog {
 
 
     @Column()
-    private boolean IsDelivered;
+    private boolean IsDelivered=true;
     @Column()
     private Date DeliveredDate;
     @Column()
-    private Date PostDate;
+    private Date PostDate = new Date();
 
 
     /*
