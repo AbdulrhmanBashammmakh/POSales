@@ -18,7 +18,7 @@ public class ProductCost {
     }
 
     public ProductCost( double costPrice, Integer avaQtyNow, boolean isDateExpire, Date dateExpire, Product product) {
-        this.ID = ID;
+
         CostPrice = costPrice;
         AvaQtyNow = avaQtyNow;
         IsDateExpire = isDateExpire;
@@ -45,7 +45,7 @@ public class ProductCost {
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="ProductId", nullable=false, updatable=false)
     private Product product;
 /*

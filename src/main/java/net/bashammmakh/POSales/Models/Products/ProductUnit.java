@@ -36,17 +36,21 @@ public class ProductUnit {
     private Integer AvaQuantity;
     @Column()
     private double SellingPrice;
-    @Column(nullable = true)
+
+    //nullable = true
+    @Column()
     private String BarCode;
-    @Column(nullable = true)
+    @Column()
     private String QrCode;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
+/*
+ @ManyToOne(fetch = FetchType.LAZY)
+ */
+    @ManyToOne(optional = false)
     @JoinColumn(name="ProductId", nullable=false, updatable=false)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     @JoinColumn(name="UnitId", nullable=false, updatable=false)
     private UnitName unitName;
 /*

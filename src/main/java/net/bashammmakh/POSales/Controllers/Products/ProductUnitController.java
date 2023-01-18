@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/Product-unit")
+@RequestMapping("/product-unit")
 public class ProductUnitController {
 
 

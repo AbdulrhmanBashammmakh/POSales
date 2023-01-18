@@ -25,15 +25,15 @@ public class ProductCostService {
 
         return productCostRepository.findById(id).get();
     }
-    public ProductCost SaveItem(ProductCost product){
+    public ProductCost SaveItem(ProductCost productCost){
 
-        return productCostRepository.save(product);
+        return productCostRepository.save(productCost);
 
     }
 
     public void Delete(Long id ){
-        ProductCost product =productCostRepository.findById(id).get();
-        if (product != null) {
+      //  ProductCost productCost =productCostRepository.findById(id).get();
+        if (productCostRepository.findById(id).isPresent()) {
             this.productCostRepository.deleteById(id);
         }
     }

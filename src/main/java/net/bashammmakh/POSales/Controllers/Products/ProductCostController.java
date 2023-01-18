@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/Product-cost")
+@RequestMapping("/product-cost")
 public class ProductCostController {
 
 
@@ -37,9 +37,9 @@ public class ProductCostController {
         productCostService.Delete(id);
     }
     @PutMapping("/update")
-    public ProductCost UpdateItem(@RequestBody ProductCost x){
+    public ProductCost UpdateItem(@RequestBody ProductCost productCost){
 
-        return productCostService.SaveItem(x) ;
+        return productCostService.SaveItem(productCost) ;
     }
 
 }
