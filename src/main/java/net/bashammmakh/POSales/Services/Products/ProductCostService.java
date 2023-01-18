@@ -32,7 +32,7 @@ public class ProductCostService {
     }
 
     public void Delete(Long id ){
-      //  ProductCost productCost =productCostRepository.findById(id).get();
+
         if (productCostRepository.findById(id).isPresent()) {
             this.productCostRepository.deleteById(id);
         }
