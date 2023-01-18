@@ -14,7 +14,7 @@ public class ProductUnit {
         this.product = product;
         this.unitName = unitName;
     }
-    public ProductUnit(Integer avaQuantity, double sellingPrice, String barCode, String qrCode, Product product, UnitName unitName) {
+    public ProductUnit(double sellingPrice,Integer avaQuantity,  String barCode, String qrCode, Product product, UnitName unitName) {
 
         AvaQuantity = avaQuantity;
         SellingPrice = sellingPrice;

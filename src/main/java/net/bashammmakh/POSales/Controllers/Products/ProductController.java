@@ -31,7 +31,7 @@ public class ProductController {
     @PostMapping(value = "/create")
     public Product insert(@RequestBody Product product){
 
-        return productService.SaveItem(product);
+        return productService.InsertNew(product);
     }
 
     @DeleteMapping("/del/{id}")
