@@ -2,6 +2,7 @@ package net.bashammmakh.POSales.Controllers.Products;
 
 import net.bashammmakh.POSales.Models.Products.ProductCost;
 import net.bashammmakh.POSales.Services.Products.ProductCostService;
+import net.bashammmakh.POSales.Services.Stores.StoreLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,7 @@ public class ProductCostController {
     @PostMapping(value = "/create")
     public ProductCost insert(@RequestBody ProductCost x){
 
-        return productCostService.SaveItem(x);
+        return productCostService.InsertNew(x);
     }
 
     @DeleteMapping("/del/{id}")

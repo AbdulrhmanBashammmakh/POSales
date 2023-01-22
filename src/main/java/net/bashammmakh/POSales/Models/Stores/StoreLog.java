@@ -3,12 +3,13 @@ package net.bashammmakh.POSales.Models.Stores;
 import jakarta.persistence.*;
 import net.bashammmakh.POSales.Models.Products.ProductCost;
 
+import java.time.LocalDate;
 import java.util.Date;
 @Entity
 public class StoreLog {
 
 
-    public StoreLog(long ID, boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, Date deliveredDate) {
+    public StoreLog(long ID, boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, LocalDate deliveredDate) {
         this.ID = ID;
         IsDrift = isDrift;
         this.store = store;
@@ -18,7 +19,7 @@ public class StoreLog {
         DeliveredDate = deliveredDate;
 
     }
-    public StoreLog( boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, Date deliveredDate) {
+    public StoreLog( boolean isDrift, Store store, ProductCost productCost, long productId, boolean isDelivered, LocalDate deliveredDate) {
 
         IsDrift = isDrift;
         this.store = store;
@@ -53,7 +54,7 @@ public class StoreLog {
     @Column()
     private boolean IsDelivered=true;
     @Column()
-    private Date DeliveredDate;
+    private LocalDate DeliveredDate;
     @Column()
     private Date PostDate = new Date();
 
@@ -117,11 +118,11 @@ public class StoreLog {
         IsDelivered = delivered;
     }
 
-    public Date getDeliveredDate() {
+    public LocalDate getDeliveredDate() {
         return DeliveredDate;
     }
 
-    public void setDeliveredDate(Date deliveredDate) {
+    public void setDeliveredDate(LocalDate deliveredDate) {
         DeliveredDate = deliveredDate;
     }
 

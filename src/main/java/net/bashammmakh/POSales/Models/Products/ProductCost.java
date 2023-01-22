@@ -39,7 +39,7 @@ public class ProductCost {
     private Integer AvaQtyNow;
 
     @Column()
-    private boolean IsDateExpire;
+    private boolean IsDateExpire =false;
     @Column()
     private Date DateExpire;
 
