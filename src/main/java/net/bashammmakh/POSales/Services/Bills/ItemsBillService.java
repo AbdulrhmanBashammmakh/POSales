@@ -5,6 +5,7 @@ import net.bashammmakh.POSales.Repos.Bills.ItemsBillRepos;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,8 +28,10 @@ private ItemsBillRepos Repository;
     }
 
 
-
+    @Transactional()
     public ItemsBill SaveItem(ItemsBill x){
+
+      x.setSubTotal(x.getQuantity()*x.getRate());
 
         return Repository.save(x);
 

@@ -22,7 +22,7 @@ public class Orders {
     private long ID ;
 
     @ManyToOne(optional=false)
-    @JoinColumn(name="VendorId", nullable=false, updatable=false)
+    @JoinColumn(name="VendorId")
     private Vendor vendor;
 
     @Column()
